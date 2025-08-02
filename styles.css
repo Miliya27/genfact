@@ -1,0 +1,133 @@
+/* ===== VIBRANT ANIMATED BACKGROUND ===== */
+body {
+  font-family: 'Comic Sans MS', cursive;
+  background: linear-gradient(-45deg, 
+    #ff3d77, #ff9a00, #00d2ff, #00ffaa);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  user-select: none;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== FLOATING COLOR BUBBLES ===== */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, 
+      rgba(255,255,255,0.4) 0%, 
+      transparent 25%) 0 0,
+    radial-gradient(circle at 80% 70%, 
+      rgba(255,255,255,0.4) 0%, 
+      transparent 25%) 0 0;
+  background-size: 300px 300px;
+  animation: bubblesMove 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes bubblesMove {
+  from { background-position: 0 0, 150px 150px; }
+  to { background-position: 300px 300px, 450px 450px; }
+}
+
+/* ===== BUTTON STYLES ===== */
+#factButton {
+  position: absolute;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  background: #10906e;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.2),
+    0 0 10px rgba(255, 255, 255, 0.6);
+  z-index: 10;
+}
+
+#factButton:hover {
+  background: #8e2de2;
+  transform: scale(1.05);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.3),
+    0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+/* ===== FACT CONTAINER ===== */
+#factContainer {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px auto;
+  max-width: 500px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    0 0 10px rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ===== IMAGE STYLES ===== */
+#factImage {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 15px;
+  display: none;
+  border: 3px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== COUNTER STYLES ===== */
+#counter {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== SECRET BUTTON ===== */
+#secretBtn {
+  opacity: 0.1;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 8px;
+  transition: all 0.3s;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  filter: drop-shadow(0 0 5px gold);
+}
+
+#secretBtn:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* ===== EMOJI RAIN ===== */
+.emoji-rain {
+  position: fixed;
+  pointer-events: none;
+  z-index: 5;
+}
